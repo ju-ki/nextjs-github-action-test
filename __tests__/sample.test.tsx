@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
-import { render, screen, fireEvent } from "@testing-library/react";
-import Sample from "../src/components/Sample";
+/// <reference lib="dom" />
 
-describe("Sample", () => {
-    it("コンポーネントのレンダリングのテスト", async () => {
-        render(<Sample />);
-    });
+import { test, expect } from 'bun:test';
+
+test('dom test', () => {
+    document.body.innerHTML = `<button>My button</button>`;
+    const button = document.querySelector('button');
+    expect(button?.innerText).toEqual('My button');
 });
