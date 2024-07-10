@@ -28,6 +28,7 @@ jobs:
       - name: Run test
         run: bun test
   create_pull_request:
+    if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
     steps:
